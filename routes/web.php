@@ -9,9 +9,19 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
+
+use App\Foto;
+use App\Libro;
 
 Route::get('/', function () {
+
+    $libros = Libro::all();
+    $fotos = Foto::all();
+    foreach ($fotos as $foto) {
+        echo $foto->libro->titulo . '<br/>';
+    }
+
     return view('welcome');
 });
 
