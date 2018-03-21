@@ -10,6 +10,6 @@ class Foto extends Model
 
     public function libro()
     {
-        return $this->belongsTo('App\Libro', 'fk_libro');
+        return $this->belongsTo('App\Libro', 'fk_libros');
     }
 }

@@ -10,6 +10,13 @@ class Pedido extends Model
 
     public function libros()
     {
-        return $this->belongsToMany('App\Libro');
+        return $this->belongsToMany('App\Libro', 'libros_pedidos', 'fk_pedidos', 'fk_libros')
+            ->withPivot('cantidad', 'precio')
+            ->withTimestamps();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'fk_usuarios');
     }
 }

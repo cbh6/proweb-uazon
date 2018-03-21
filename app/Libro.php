@@ -10,7 +10,9 @@ class Libro extends Model
 
     public function autores()
     {
-        return $this->belongsToMany('App\Autor', 'libros_autores')->withPivot('fecha')->withTimestamps();
+        return $this->belongsToMany('App\Autor', 'libros_autores', 'fk_libros', 'fk_autores')
+            ->withPivot('fecha')
+            ->withTimestamps();
     }
 
     public function fotos()
@@ -20,6 +22,8 @@ class Libro extends Model
 
     public function pedidos()
     {
-        return $this->belongsToMany('App\Autor', 'libros_autores')->withPivot('cantidad', 'fecha')->withTimestamps();
+        return $this->belongsToMany('App\Pedido', 'libros_pedidos', 'fk_libros', 'fk_pedidos')
+            ->withPivot('cantidad', 'precio')
+            ->withTimestamps();
     }
 }

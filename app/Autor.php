@@ -10,6 +10,8 @@ class Autor extends Model
 
     public function libros()
     {
-        return $this->belongsToMany('App\Libro');
+        return $this->belongsToMany('App\Libro', 'libros_autores', 'fk_autores', 'fk_libros')
+            ->withPivot('fecha')
+            ->withTimestamps();
     }
 }
