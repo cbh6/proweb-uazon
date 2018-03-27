@@ -3,6 +3,7 @@
 namespace App\Helpers;
 
 use App\User;
+use Firebase\JWT\JWT;
 
 class JwtAuth
 {
@@ -37,10 +38,10 @@ class JwtAuth
             );
 
             $jwt = JWT::encode($token, $this->key, 'HS256');
-            $decoded = JWT::decode($jwy, $this->key, array('HS256'));
+            $decoded = JWT::decode($jwt, $this->key, array('HS256'));
 
             // Return token if user is doing login
-            if (!is_null($getToken)) {
+            if (is_null($getToken)) {
                 return $jwt;
                 // Return decoded token if user has logged and is navigating
             } else {
