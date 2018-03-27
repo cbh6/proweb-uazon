@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Autor;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\LibroResource;
-use App\Libro;
 use Illuminate\Http\Request;
 
-class LibroController extends Controller
+class AutorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -48,12 +48,12 @@ class LibroController extends Controller
      */
     public function show($id)
     {
-        $libro = Libro::find($id);
+        $autor = Autor::find($id);
 
-        if (!$libro) {
+        if (!$autor) {
             return response([], 404);
         }
-        return new LibroResource($libro);
+        return new AutorResource($autor);
     }
 
     /**
@@ -93,12 +93,12 @@ class LibroController extends Controller
     /**
      *
      */
-    public function getAutoresFromLibro($id)
+    public function getLibrosFromAutor($id)
     {
-        $libro = Libro::find($id);
-        if (!$libro) {
+        $autor = Autor::find($id);
+        if (!$autor) {
             return response([], 404);
         }
-        return AutorResource::collection($libro->autores);
+        return LibroResource::collection($autor->libros);
     }
 }

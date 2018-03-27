@@ -19,4 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('/register', 'UserController@register');
 Route::post('/login', 'UserController@login');
-Route::resource('/libros', 'LibroController');
+Route::apiResource('libros', 'LibroController');
+Route::apiResource('autores', 'AutorController');
+Route::get('/autores/{id}/libros', 'AutorController@getLibrosFromAutor');
+Route::get('/libros/{id}/autores', 'LibroController@getAutoresFromLibro');
