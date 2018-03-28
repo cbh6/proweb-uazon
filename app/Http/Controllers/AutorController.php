@@ -16,7 +16,8 @@ class AutorController extends Controller
      */
     public function index()
     {
-        //
+        $autores = Autor::all();
+        return AutorResource::collection($autores);
     }
 
     /**
