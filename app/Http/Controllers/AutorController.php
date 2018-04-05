@@ -6,6 +6,7 @@ use App\Autor;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\LibroResource;
 use Illuminate\Http\Request;
+use Validator;
 
 class AutorController extends Controller
 {
@@ -21,16 +22,6 @@ class AutorController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -38,7 +29,31 @@ class AutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Retrieve post data
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $params_array = json_decode($json, true);
+
+        $validator = $this->validator($params_array);
+
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 400);
+        }
+
+        // Save Autor
+        $autor = new Autor();
+        $autor->nombre = $params->nombre;
+
+        $autor->save();
+
+        $data = array(
+            'autor' => $autor,
+            'status' => 'success',
+            'message' => 'new Autor inserted successfuly',
+            'code' => 200,
+        );
+
+        return response()->json($data);
     }
 
     /**
@@ -58,17 +73,6 @@ class AutorController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -77,7 +81,40 @@ class AutorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Retrieve post data
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $params_array = json_decode($json, true);
+
+        $validator = $this->validator($params_array);
+
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 400);
+        }
+
+        // Update Autor
+        $autor = Autor::find($id);
+
+        if ($autor) {
+            $autor->nombre = $params->nombre;
+            $autor->save();
+            $data = array(
+                'autor' => $autor,
+                'status' => 'success',
+                'message' => 'new Autor updated successfuly',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'Autor with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+
+        return response()->json($data);
     }
 
     /**
@@ -88,7 +125,26 @@ class AutorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $autor = Autor::find($id);
+
+        if ($autor) {
+            $autor->delete();
+            $data = array(
+                'autor' => $autor,
+                'status' => 'success',
+                'message' => 'Autor with id ' . $id . ' deleted successfuly',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'Autor with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+
     }
 
     /**
@@ -101,5 +157,15 @@ class AutorController extends Controller
             return response([], 404);
         }
         return LibroResource::collection($autor->libros);
+    }
+
+    /**
+     *
+     */
+    private function validator($data)
+    {
+        return Validator::make($data, [
+            'nombre' => 'required',
+        ]);
     }
 }
