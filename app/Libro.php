@@ -20,6 +20,11 @@ class Libro extends Model
         return $this->hasMany('App\Foto');
     }
 
+    public function comentarios()
+    {
+        return $this->hasMany('App\Comentario', 'fk_libros');
+    }
+
     public function pedidos()
     {
         return $this->belongsToMany('App\Pedido', 'libros_pedidos', 'fk_libros', 'fk_pedidos')

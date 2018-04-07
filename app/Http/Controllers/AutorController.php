@@ -101,7 +101,7 @@ class AutorController extends Controller
             $data = array(
                 'autor' => $autor,
                 'status' => 'success',
-                'message' => 'new Autor updated successfuly',
+                'message' => 'Autor updated successfuly',
                 'code' => 200,
             );
             return response()->json($data);
