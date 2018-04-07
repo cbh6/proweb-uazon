@@ -22,16 +22,6 @@ class LibroController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -45,14 +35,7 @@ class LibroController extends Controller
         $params = json_decode($json);
         $params_array = json_decode($json, true);
 
-        $validator = Validator::make($params_array, [
-            'isbn' => 'required',
-            'precio' => 'required',
-            'titulo' => 'required',
-            'editorial' => 'required',
-            'n_pags' => 'required',
-            'atributos_extra' => 'required',
-        ]);
+        $validator = $this->validator($params_array);
 
         if ($validator->fails()) {
             return response()->json($validator->messages(), 400);
@@ -99,17 +82,6 @@ class LibroController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -118,7 +90,48 @@ class LibroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Retrieve post data
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $params_array = json_decode($json, true);
+
+        $validator = $this->validator($params_array);
+
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 400);
+        }
+
+        // Update Libro
+        $libro = Libro::find($id);
+
+        if ($libro) {
+            $libro->isbn = $params->isbn;
+            $libro->precio = $params->precio;
+            $libro->titulo = $params->titulo;
+            $libro->editorial = $params->editorial;
+            $libro->n_pags = $params->n_pags;
+            $libro->voto = 0;
+            $libro->num_voto = 0;
+            $libro->atributos_extra = json_encode($params->atributos_extra);
+
+            $libro->save();
+            $data = array(
+                'libro' => $libro,
+                'status' => 'success',
+                'message' => 'new Libro updated successfuly',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'Libro with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+
+        return response()->json($data);
     }
 
     /**
@@ -129,7 +142,25 @@ class LibroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $libro = Libro::find($id);
+
+        if ($libro) {
+            $libro->delete();
+            $data = array(
+                'libro' => $libro,
+                'status' => 'success',
+                'message' => 'Libro with id ' . $id . ' deleted successfuly',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'Libro with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
     }
 
     /**
@@ -142,5 +173,20 @@ class LibroController extends Controller
             return response([], 404);
         }
         return AutorResource::collection($libro->autores);
+    }
+
+    /**
+     *
+     */
+    private function validator($data)
+    {
+        return Validator::make($data, [
+            'isbn' => 'required',
+            'precio' => 'required',
+            'titulo' => 'required',
+            'editorial' => 'required',
+            'n_pags' => 'required',
+            'atributos_extra' => 'required',
+        ]);
     }
 }
