@@ -122,7 +122,7 @@ class LibroComentarioController extends Controller
 
         if (!$comentario) {
             $message = 'Comentario with id ' . $idComentario . ' does not exist for Libro ' . $idLibro;
-            return $this->respondNotFound($message, 'Comentario');
+            return $this->respondNotFound($message);
         }
 
         $comentario->delete();
