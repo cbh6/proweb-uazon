@@ -17,7 +17,7 @@ class Libro extends Model
 
     public function fotos()
     {
-        return $this->hasMany('App\Foto');
+        return $this->hasMany('App\Foto', 'fk_libros');
     }
 
     public function comentarios()

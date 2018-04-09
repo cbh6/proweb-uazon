@@ -28,6 +28,9 @@ Route::group(['middleware' => ['auth.jwt']], function () {
     // entonces necesitaremos crear lo que se conoce como  "Recurso Anidado" de libros con comentarios.
     Route::apiResource('libros.comentarios', 'LibroComentarioController', ['only' => ['index', 'show', 'update', 'destroy']]);
     Route::apiResource('comentarios', 'ComentarioController', ['only' => ['index', 'show']]);
+
+    // Fotos
+    Route::apiResource('libros.fotos', 'LibroFotoController', ['only' => ['index', 'store', 'destroy']]);
 });
 Route::post('/register', 'UserController@register');
 Route::post('/login', 'UserController@login');

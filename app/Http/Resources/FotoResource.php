@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class ComentarioResource extends Resource
+class FotoResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -16,10 +16,9 @@ class ComentarioResource extends Resource
     {
         return [
             'id' => $this->id,
-            'autor' => $this->autor,
-            'descripcion' => $this->descripcion,
-            'validado' => $this->validado,
             'fk_libros' => $this->fk_libros,
+            'orden' => $this->orden,
+            'path' => $this->path,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
         ];
