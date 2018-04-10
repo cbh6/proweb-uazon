@@ -20,9 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth.jwt']], function () {
     Route::apiResource('libros', 'LibroController');
     Route::apiResource('autores', 'AutorController');
+    /*
     Route::get('/autores/{id}/libros', 'AutorController@getLibrosFromAutor');
     Route::get('/libros/{id}/autores', 'LibroController@getAutoresFromLibro');
-
+     */
+    Route::apiResource('libros.autores', 'LibroAutorController', ['only' => ['index', 'update', 'destroy']]);
     // Comentarios
     // Como la clase principal es libro y un comentario no se puede crear si no le indicamos el libro,
     // entonces necesitaremos crear lo que se conoce como  "Recurso Anidado" de libros con comentarios.
