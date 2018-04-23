@@ -14,7 +14,7 @@ class JwtAuth
         $this->key = 'uaz17-18key';
     }
 
-    public function signup($email, $password, $getToken = null)
+    public function signup($email, $password, $getIdentity = null)
     {
         $user = User::where(
             array(
@@ -41,7 +41,7 @@ class JwtAuth
             $decoded = JWT::decode($jwt, $this->key, array('HS256'));
 
             // Return token if user is doing login
-            if (is_null($getToken)) {
+            if (is_null($getIdentity)) {
                 return $jwt;
                 // Return decoded token if user has logged and is navigating
             } else {
@@ -49,7 +49,7 @@ class JwtAuth
             }
         } else {
             // Return error
-            return array('status' => 'error', 'message' => 'Login failed');
+            return array('status' => 'error', 'message' => 'Credenciales invalidas');
         }
     }
 

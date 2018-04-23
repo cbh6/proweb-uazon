@@ -44,14 +44,14 @@ class UserController extends Controller
                 $data = array(
                     'status' => 'success',
                     'code' => 200,
-                    'message' => 'User registered successfuly',
+                    'message' => 'El usuario con email ' . $email . ' ha sido registrado satisfactoriamente',
                 );
             } else {
                 // Dont save user because already exists
                 $data = array(
                     'status' => 'error',
                     'code' => 400,
-                    'message' => 'User already exist, cannot register',
+                    'message' => 'El usuario con email ' . $email . ' ya existe',
                 );
             }
         } else {
@@ -75,19 +75,19 @@ class UserController extends Controller
 
         $email = (!is_null($json) && isset($params->email)) ? $params->email : null;
         $password = (!is_null($json) && isset($params->password)) ? $params->password : null;
-        $getToken = (!is_null($json) && isset($params->gettoken)) ? $params->gettoken : null;
+        $getIdentity = (!is_null($json) && isset($params->getIdentity)) ? $params->getIdentity : null;
 
         // Cypher pass
         $pwd = hash('sha256', $password);
 
-        if (!is_null($email) && !is_null($password) && ($getToken == null || $getToken == 'false')) {
+        if (!is_null($email) && !is_null($password) && ($getIdentity == null || $getIdentity == 'false')) {
             $signup = $jwtAuth->signup($email, $pwd);
-        } else if (!is_null($getToken)) {
-            $signup = $jwtAuth->signup($email, $pwd, $getToken);
+        } else if (!is_null($getIdentity)) {
+            $signup = $jwtAuth->signup($email, $pwd, $getIdentity);
         } else {
             $signup = array(
                 'status' => 'error',
-                'message' => 'Send your data by post request',
+                'message' => 'Falta alguno de los campos',
             );
         }
 
