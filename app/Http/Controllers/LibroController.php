@@ -29,7 +29,6 @@ class LibroController extends Controller
      */
     public function store(Request $request)
     {
-
         // Retrieve post data
         $json = $request->input('json', null);
         $params = json_decode($json);
@@ -50,14 +49,16 @@ class LibroController extends Controller
         $libro->n_pags = $params->n_pags;
         $libro->voto = 0;
         $libro->num_voto = 0;
-        $libro->atributos_extra = json_encode($params->atributos_extra);
+        
+        $atributos_extra = (!is_null($json) && isset($params->atributos_extra)) ? json_encode($params->atributos_extra) : json_encode(json_decode("{}"));
+        $libro->atributos_extra = $atributos_extra;
 
         $libro->save();
 
         $data = array(
             'libro' => $libro,
             'status' => 'success',
-            'message' => 'new Libro inserted successfuly',
+            'message' => 'Libro insertado correctamente',
             'code' => 200,
         );
 
@@ -118,14 +119,14 @@ class LibroController extends Controller
             $data = array(
                 'libro' => $libro,
                 'status' => 'success',
-                'message' => 'new Libro updated successfuly',
+                'message' => 'Libro actualizado correctamente',
                 'code' => 200,
             );
             return response()->json($data);
         } else {
             $data = array(
                 'status' => 'error',
-                'message' => 'Libro with id ' . $id . ' does not exist',
+                'message' => 'El libro con id ' . $id . ' no existe',
                 'code' => 404,
             );
             return response()->json($data, 404);
@@ -149,14 +150,14 @@ class LibroController extends Controller
             $data = array(
                 'libro' => $libro,
                 'status' => 'success',
-                'message' => 'Libro with id ' . $id . ' deleted successfuly',
+                'message' => 'Libro con id ' . $id . ' borrado correctamente',
                 'code' => 200,
             );
             return response()->json($data);
         } else {
             $data = array(
                 'status' => 'error',
-                'message' => 'Libro with id ' . $id . ' does not exist',
+                'message' => 'El libro con id ' . $id . ' no existe',
                 'code' => 404,
             );
             return response()->json($data, 404);
@@ -186,7 +187,7 @@ class LibroController extends Controller
             'titulo' => 'required',
             'editorial' => 'required',
             'n_pags' => 'required',
-            'atributos_extra' => 'required',
+            // 'atributos_extra' => 'required',
         ]);
     }
 }
