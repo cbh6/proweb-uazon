@@ -14,7 +14,7 @@ class AddForeignKeysToFotosTable extends Migration {
 	{
 		Schema::table('fotos', function(Blueprint $table)
 		{
-			$table->foreign('fk_libros', 'FK_Fotos_1')->references('id')->on('libros')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('fk_libros', 'FK_Fotos_1')->references('id')->on('libros')->onUpdate('NO ACTION')->onDelete('cascade');
 		});
 	}
 

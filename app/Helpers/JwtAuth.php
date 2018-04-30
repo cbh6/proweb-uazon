@@ -49,7 +49,7 @@ class JwtAuth
             }
         } else {
             // Return error
-            return array('status' => 'error', 'message' => 'Credenciales invalidas');
+            return array('status' => 'error', 'message' => 'Credenciales inválidas');
         }
     }
 
