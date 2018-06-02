@@ -24,7 +24,7 @@ class LibroResource extends Resource
             'titulo' => $this->titulo,
             'editorial' => $this->editorial,
             'atributos_extra' => $this->atributos_extra,
-            // 'autores' => AutorResource::collection($this->autores),
+            'autores' => AutorResource::collection($this->autores),
         ];
     }
 }
