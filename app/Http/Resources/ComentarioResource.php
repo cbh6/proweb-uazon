@@ -19,7 +19,7 @@ class ComentarioResource extends Resource
             'autor' => $this->autor,
             'descripcion' => $this->descripcion,
             'validado' => $this->validado,
-            'fk_libros' => $this->fk_libros,
+            'libro' => $this->libro,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
         ];
