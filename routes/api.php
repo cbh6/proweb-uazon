@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth.jwt']], function () {
     // Como la clase principal es libro y un comentario no se puede crear si no le indicamos el libro,
     // entonces necesitaremos crear lo que se conoce como  "Recurso Anidado" de libros con comentarios.
     Route::apiResource('libros.comentarios', 'LibroComentarioController', ['only' => ['index', 'show', 'update', 'destroy']]);
-    Route::apiResource('comentarios', 'ComentarioController', ['only' => ['index', 'show']]);
+    Route::apiResource('comentarios', 'ComentarioController', ['only' => ['index', 'show', 'update', 'destroy']]);
 
     // Fotos
     Route::apiResource('libros.fotos', 'LibroFotoController', ['only' => ['index', 'store', 'destroy']]);
