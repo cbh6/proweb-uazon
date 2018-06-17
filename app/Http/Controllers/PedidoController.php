@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Pedido;
 use App\Http\Resources\PedidoResource;
+use App\Pedido;
 use Illuminate\Http\Request;
 use Validator;
 
@@ -21,27 +21,6 @@ class PedidoController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
      * Display the specified resource.
      *
      * @param  int  $id
@@ -49,30 +28,12 @@ class PedidoController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+        $pedido = Pedido::find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        if (!$pedido) {
+            return response([], 404);
+        }
+        return new PedidoResource($pedido);
     }
 
     /**
@@ -83,6 +44,24 @@ class PedidoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pedido = Pedido::find($id);
+
+        if ($pedido) {
+            $pedido->delete();
+            $data = array(
+                'pedido' => $pedido,
+                'status' => 'success',
+                'message' => 'Pedido con id ' . $id . ' borrado correctamente',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'El pedido con id ' . $id . ' no existe',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
     }
 }
