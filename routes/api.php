@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['middleware' => ['auth.jwt']], function () {
     Route::apiResource('libros', 'LibroController');
     Route::apiResource('autores', 'AutorController');
+    Route::apiResource('pedidos', 'PedidoController');
     /*
     Route::get('/autores/{id}/libros', 'AutorController@getLibrosFromAutor');
     Route::get('/libros/{id}/autores', 'LibroController@getAutoresFromLibro');
