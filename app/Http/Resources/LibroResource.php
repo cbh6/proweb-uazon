@@ -28,6 +28,9 @@ class LibroResource extends Resource
             'cantidad' => $this->whenPivotLoaded('libros_pedidos', function () {
                 return $this->pivot->cantidad;
             }),
+            'precio' => $this->whenPivotLoaded('libros_pedidos', function () {
+                return $this->pivot->precio;
+            }),
         ];
     }
 }
