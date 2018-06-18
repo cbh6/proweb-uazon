@@ -21,6 +21,7 @@ Route::group(['middleware' => ['auth.jwt']], function () {
     Route::apiResource('libros', 'LibroController');
     Route::apiResource('autores', 'AutorController');
     Route::apiResource('pedidos', 'PedidoController', ['only' => ['index', 'show', 'destroy']]);
+    Route::apiResource('usuarios', 'UserController', ['only' => ['index', 'show', 'update', 'destroy']]);
     /*
     Route::get('/autores/{id}/libros', 'AutorController@getLibrosFromAutor');
     Route::get('/libros/{id}/autores', 'LibroController@getAutoresFromLibro');

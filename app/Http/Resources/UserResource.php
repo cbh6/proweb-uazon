@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\Resource;
 
-class PedidoResource extends Resource
+class UserResource extends Resource
 {
     /**
      * Transform the resource into an array.
@@ -16,12 +16,11 @@ class PedidoResource extends Resource
     {
         return [
             'id' => $this->id,
-            'total' => $this->total,
-            'fecha' => $this->fecha,
-            'pagado' => $this->pagado,
-            'total' => $this->total,
-            'usuario' => UsuarioResource::collection($this->user),
-            'libros' => LibroResource::collection($this->libros),
+            'name' => $this->name,
+            'email' => $this->email,
+            'role' => $this->role,
+            'address' => $this->address,
+            'cp' => $this->cp,
         ];
     }
 }

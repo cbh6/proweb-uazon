@@ -3,11 +3,142 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\JwtAuth;
+use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $usuarios = User::all();
+        return UserResoure::collection($usuarios);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $user = User::find($id);
+
+        if (!$user) {
+            $data = array(
+                'status' => 'error',
+                'message' => 'User with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+
+        return new UserResource($user);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        // Retrieve post data
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $params_array = json_decode($json, true);
+
+        $validator = $this->validator($params_array);
+
+        if ($validator->fails()) {
+            return response()->json($validator->messages(), 400);
+        }
+
+        // Update user
+        $user = User::find($id);
+
+        if ($libro) {
+            $user->name = $params->isbn;
+            $user->email = $params->precio;
+            $user->role = $params->titulo;
+
+            if (isset($params->cp)) {
+                $user->cp = $params->cp;
+            }
+
+            if (isset($params->address)) {
+                $user->address = $params->address;
+            }
+
+            $user->save();
+            $data = array(
+                'user' => $user,
+                'status' => 'success',
+                'message' => 'User actualizado correctamente',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'El user con id ' . $id . ' no existe',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+
+        return response()->json($data);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        if ($user) {
+            $user->delete();
+            $data = array(
+                'user' => $user,
+                'status' => 'success',
+                'message' => 'User with id ' . $id . ' deleted successfuly',
+                'code' => 200,
+            );
+            return response()->json($data);
+        } else {
+            $data = array(
+                'status' => 'error',
+                'message' => 'User with id ' . $id . ' does not exist',
+                'code' => 404,
+            );
+            return response()->json($data, 404);
+        }
+    }
+
+    /**
+     *
+     */
+    private function validator($data)
+    {
+        return Validator::make($data, [
+            'name' => 'required',
+            'email' => 'required',
+            'role' => 'required',
+        ]);
+    }
+
     public function register(Request $request)
     {
         // Obtain post request
