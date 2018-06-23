@@ -20,7 +20,7 @@ class PedidoResource extends Resource
             'fecha' => $this->fecha,
             'pagado' => $this->pagado,
             'total' => $this->total,
-            'usuario' => UserResource::collection($this->user),
+            'usuario' => new UserResource($this->user),
             'libros' => LibroResource::collection($this->libros),
         ];
     }
