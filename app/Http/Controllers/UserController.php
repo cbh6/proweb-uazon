@@ -6,6 +6,7 @@ use App\Helpers\JwtAuth;
 use App\Http\Resources\UserResource;
 use App\User;
 use Illuminate\Http\Request;
+use Validator;
 
 class UserController extends Controller
 {
@@ -65,10 +66,10 @@ class UserController extends Controller
         // Update user
         $user = User::find($id);
 
-        if ($libro) {
-            $user->name = $params->isbn;
-            $user->email = $params->precio;
-            $user->role = $params->titulo;
+        if ($user) {
+            $user->name = $params->name;
+            $user->email = $params->email;
+            $user->role = $params->role;
 
             if (isset($params->cp)) {
                 $user->cp = $params->cp;
