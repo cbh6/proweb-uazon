@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Foto;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\LibroResource;
 use App\Libro;
@@ -49,7 +50,7 @@ class LibroController extends Controller
         $libro->n_pags = $params->n_pags;
         $libro->voto = 0;
         $libro->num_voto = 0;
-        
+
         $atributos_extra = (!is_null($json) && isset($params->atributos_extra)) ? json_encode($params->atributos_extra) : json_encode(json_decode("{}"));
         $libro->atributos_extra = $atributos_extra;
 
@@ -174,6 +175,49 @@ class LibroController extends Controller
             return response([], 404);
         }
         return AutorResource::collection($libro->autores);
+    }
+
+
+    // No se usa
+    public function addFoto(Request $request)
+    {
+        $json = $request->input('json', null);
+        $params = json_decode($json);
+        $path_foto = (!is_null($json) && isset($params->path_foto)) ? $params->path_foto : null;
+        $fk_libros = (!is_null($json) && isset($params->fk_libros)) ? $params->fk_libros : null;
+        $orden = (!is_null($json) && isset($params->orden)) ? $params->orden : null;
+
+        if (!is_null($path_foto) && !is_null($fk_libros) && !is_null($orden)) {
+            $foto = new Foto();
+            $foto->path_foto = $path_foto;
+            $foto->orden = $orden;
+            $foto->fk_libros = $fk_libros;
+
+            $libro = Libro::where('id', '=', $fk_libros)->first();
+
+            if (isset($libro)) {
+                $foto->save();
+
+                $data = array(
+                    'status' => 'success',
+                    'code' => 200,
+                    'message' => 'La foto ha sido registrada satisfactoriamente',
+                );
+            } else {
+                $data = array(
+                    'status' => 'error',
+                    'code' => 400,
+                    'message' => 'El libro con id ' . $fk_libros . ' no existe',
+                );
+            }
+        } else {
+            $data = array(
+                'status' => 'error',
+                'code' => 400,
+                'message' => 'Falta alguno de los parámetros',
+            );
+        }
+        return response()->json($data, 200);
     }
 
     /**

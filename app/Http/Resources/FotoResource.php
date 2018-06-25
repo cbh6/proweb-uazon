@@ -18,9 +18,9 @@ class FotoResource extends Resource
             'id' => $this->id,
             'fk_libros' => $this->fk_libros,
             'orden' => $this->orden,
-            'path' => $this->path,
-            'createdAt' => $this->created_at,
-            'updatedAt' => $this->updated_at,
+            'path_foto' => $this->path_foto,
+            // 'createdAt' => $this->created_at,
+            // 'updatedAt' => $this->updated_at,
         ];
     }
 }
