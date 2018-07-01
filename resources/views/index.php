@@ -37,7 +37,7 @@
 
     <!-- Estilos base cargados directamente en main.css -->
     <style type="text/css" rel="stylesheet">
-        <?php echo file_get_contents('./public/assets/styles/main.css') ?>
+        <?php echo file_get_contents('./assets/styles/main.css') ?>
     </style>
 
     <!-- Estilos de las página review -->
