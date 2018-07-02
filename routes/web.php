@@ -11,20 +11,18 @@
 |
  */
 
-use App\Foto;
-use App\Libro;
+// Route::get('/', function () {
 
-Route::get('/', function () {
+//     $libros = Libro::all();
+//     $fotos = Foto::all();
+//     foreach ($fotos as $foto) {
+//         echo $foto->libro->titulo . '<br/>';
+//     }
 
-    $libros = Libro::all();
-    $fotos = Foto::all();
-    foreach ($fotos as $foto) {
-        echo $foto->libro->titulo . '<br/>';
-    }
+//     return view('welcome');
+// });
 
-    return view('welcome');
-});
+Route::get('/', 'HomeController@show')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

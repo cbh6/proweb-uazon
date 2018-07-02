@@ -13,16 +13,11 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function show(Request $request)
     {
-        return view('home');
+        return view('home', ['seo_title' => 'Home']);
     }
 }
