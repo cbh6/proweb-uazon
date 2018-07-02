@@ -29,7 +29,7 @@
   }
 
   &__link {
-    color: #ffffff;
+    color: red;
     text-decoration: none;
   }
 }

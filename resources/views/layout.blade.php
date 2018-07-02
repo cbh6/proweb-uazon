@@ -35,9 +35,10 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpg">
 
-    <style type="text/css" rel="stylesheet">
-        <?php echo file_get_contents('assets/styles/main.css') ?>
-    </style>
+    <!-- <style type="text/css" rel="stylesheet">
+        /* <?php echo file_get_contents('assets/styles/main.css') ?> */
+    </style> -->
+    <link href="{{ asset('assets/styles/main.css') }}" rel="stylesheet">
 </head>
 <body>
 
@@ -46,10 +47,7 @@
 
 <!-- Main Content -->
 <main>
-
     @yield('content')
-
-    <?php //include_once 'reviews/index.php' ?>
     @stack('list')
 </main>
 
