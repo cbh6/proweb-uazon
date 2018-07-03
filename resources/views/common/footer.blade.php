@@ -1,7 +1,7 @@
 <!-- Main footer -->
 <footer class="main-footer">
     <div class="container main-footer__container">
-        <div class="row">
+        <div class="row main-footer__row">
             <div class="col-md-6">
 
                 <!-- Copyright -->
