@@ -39,6 +39,7 @@
         /* <?php echo file_get_contents('assets/styles/main.css') ?> */
     </style> -->
     <link href="{{ asset('assets/styles/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/styles/home.css') }}" rel="stylesheet">
 </head>
 <body>
 
