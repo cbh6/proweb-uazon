@@ -9,10 +9,14 @@
 /* Main footer
    ========================================================================== */
 .main-footer {
-  background: var(--color-default--dark);
-  color: #ffffff;
+  /* background: var(--color-default--dark); */
+  color: var(--color-text);
   font-size: 14px;
   padding: 30px 0;
+
+  &__container {
+    border-top: 1px solid var(--color-default--lighter);
+  }
 }
 
 .copyright {
@@ -25,11 +29,15 @@
   padding: 0;
 
   &__item {
-
   }
 
   &__link {
-    color: red;
+    color: var(--color-link);
+    text-decoration: none;
+  }
+
+  &__link:hover {
+    color: var(--color-link--hover);
     text-decoration: none;
   }
 }

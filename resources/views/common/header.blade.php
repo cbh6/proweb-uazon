@@ -1,6 +1,6 @@
 <!-- Main header -->
-<header>
-<div class="container">
+<header class="main-header">
+    <div class="container main-header__container">
         <div class="row">
             <div class="col-md-6">
 
@@ -15,12 +15,12 @@
             <div class="col-md-6">
 
                 <!-- Header tools -->
-                <ul>
-                    <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Registrarse</a></li>
-                    <li><a href="#">Carrito de la compra</a></li>
+                <ul class="header-links">
+                    <li class="header-links__item"><a class="header-links__link" href="{{ route('login') }}">Login</a></li>
+                    <li class="header-links__item"><a class="header-links__link" href="{{ route('register') }}">Registrarse</a></li>
+                    <li class="header-links__item"><a class="header-links__link" href="#">Carrito de la compra</a></li>
                 </ul>
-               
+
             </div>
         </div>
     </div>

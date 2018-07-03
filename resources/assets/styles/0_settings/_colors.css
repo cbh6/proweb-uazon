@@ -10,18 +10,18 @@
 
     /* Palette
        ========================================================================== */
-    --color-default: #2C5169;
+    --color-default: rgb(44, 105, 61);
     --color-default--lighter: #CCD0D5;
-    --color-default--dark: #002E4D;
+    --color-default--dark: rgb(2, 98, 52);
 
     /* Texts
        ========================================================================== */
-    --color-text: var(--color-default);
+    --color-text: rgb(63, 97, 106);
     --color-title: var(--color-default--dark);
 
     /* Links
        ========================================================================== */
-    --color-link: #26C688;
+    --color-link: rgb(87, 198, 163);
     --color-link--hover: var(--color-default--dark);
 
 }
