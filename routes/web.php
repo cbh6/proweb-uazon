@@ -23,6 +23,7 @@
 // });
 
 Route::get('/', 'HomeController@show')->name('home');
+Route::get('/libros/list', 'LibroController@list')->name('list');
 
 Auth::routes();
 

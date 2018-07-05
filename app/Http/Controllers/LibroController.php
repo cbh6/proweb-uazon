@@ -234,4 +234,12 @@ class LibroController extends Controller
             // 'atributos_extra' => 'required',
         ]);
     }
+
+    public function list() {
+        $libros = Libro::orderBy('titulo', 'asc')->paginate(2);
+        return view('libros.list', array(
+            'libros' => $libros,
+            'seo_title' => 'Libros'
+        ));
+    }
 }
