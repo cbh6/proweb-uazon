@@ -236,7 +236,7 @@ class LibroController extends Controller
     }
 
     public function list() {
-        $libros = Libro::orderBy('titulo', 'asc')->paginate(2);
+        $libros = Libro::orderBy('titulo', 'asc')->paginate(9);
         return view('libros.list', array(
             'libros' => $libros,
             'seo_title' => 'Libros'

@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+ .pagination {
+   list-style: none;
+   text-align: center;
+ }
+
+ .pagination li {
+   display: inline-block;
+ }

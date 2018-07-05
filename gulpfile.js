@@ -48,7 +48,7 @@ gulp.task('watch', function() {
                  }
              ]
          },
-         browser: ["google chrome"]
+         browser: ["Firefox"]
     });
 
     // Watch for styles
