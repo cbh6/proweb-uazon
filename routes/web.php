@@ -24,6 +24,7 @@
 
 Route::get('/', 'HomeController@show')->name('home');
 Route::get('/libros/list', 'LibroController@list')->name('list');
+Route::get('/libros/detail', 'LibroController@list')->name('detail');
 
 Auth::routes();
 
