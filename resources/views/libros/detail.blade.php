@@ -3,6 +3,7 @@
 @section('content')
 <article>
     <section>
+        <!-- Información principal section -->
         <div class="container libros-detail__main-data-container">
             <h2 class="libros-detail__title">{{$libro->titulo}}</h2>
             <div class="row libros-detail__row">
@@ -39,6 +40,35 @@
             </div>
         </div>
     </section>
+
+    <!-- Recomendados section -->
+    <section>
+        <div class="container libros-detail__recommendations-container">
+            <h3 class="title libros-detail__section-title">Te podría interesar</h3>
+            <div class="row libros-detail__row">
+            @foreach($recomendados as $recomendado)
+                <div class="col-md-3 libros-detail__recommendation">
+                    <img class="libros-detail__recommendation-cover"
+                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
+                        alt="Portada del libro" />
+
+                    <div class="libros-detail__recommendation-info">
+                        <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">
+                            <span>{{$recomendado->titulo}}</span>
+                        </a>
+                        <br>
+                        <span>
+                        Por <a href="#">{{$recomendado->autores[0]->nombre}}</a>
+                        </span>
+                    </div>
+
+                </div>
+            @endforeach
+            </div>
+        </div>
+    </section>
+    
+    <!-- Comentarios section -->
     <section>
         <div class="container libros-detail__comments-container">
             <h3 class="title libros-detail__section-title">Comentarios</h3>

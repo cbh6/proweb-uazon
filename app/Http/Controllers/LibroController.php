@@ -177,7 +177,6 @@ class LibroController extends Controller
         return AutorResource::collection($libro->autores);
     }
 
-
     // No se usa
     public function addFoto(Request $request)
     {
@@ -235,19 +234,22 @@ class LibroController extends Controller
         ]);
     }
 
-    public function list() {
+    function list() {
         $libros = Libro::orderBy('titulo', 'asc')->paginate(9);
         return view('libros.list', array(
             'libros' => $libros,
-            'seo_title' => 'Libros'
+            'seo_title' => 'Libros',
         ));
     }
 
-    public function detail($libro_id) {
+    public function detail($libro_id)
+    {
         $libro = Libro::find($libro_id);
+        $libros = Libro::where('categoria', $libro->categoria)->where('id', '!=' , $libro->id)->offset(0)->limit(4)->get();
         return view('libros.detail', array(
             'libro' => $libro,
-            'seo_title' => $libro->titulo
+            'recomendados' => $libros,
+            'seo_title' => $libro->titulo,
         ));
     }
 }

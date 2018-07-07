@@ -85,6 +85,36 @@
       background-color: var(--color-box);
     }
 
+    /* Recommendations container ---------------*/
+    &__recommendations-container {
+      padding: 0 35px;
+      @mixin media--sm {
+        padding: 0 100px;
+      }
+    }
+
+    &__recommendation {
+      /* margin: 10px 0; */
+      font-size: .9em;
+    }
+
+    &__recommendation a {
+      text-decoration: none;
+    }
+
+    &__recommendation-cover {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &__recommendation-info {
+      margin-top: 10px;
+      padding-left: 40px;
+    }
+  
+
     /* Comments container ----------------------*/
     &__comments-container {
       padding: 0 35px;
