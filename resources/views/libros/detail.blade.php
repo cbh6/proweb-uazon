@@ -3,7 +3,7 @@
 @section('content')
 <article>
     <section>
-        <div class="container libros-detail__container">
+        <div class="container libros-detail__main-data-container">
             <h2 class="libros-detail__title">{{$libro->titulo}}</h2>
             <div class="row libros-detail__row">
                 <div class="col-md-6 libros-detail__cover-container">
@@ -37,6 +37,22 @@
     
                 </div>
             </div>
+        </div>
+    </section>
+    <section>
+        <div class="container libros-detail__comments-container">
+            <h3 class="title libros-detail__section-title">Comentarios</h3>
+            @foreach($libro->comentarios as $comentario)
+                <div class="row libros-detail__comment">
+                    <div class="libros-detail__comment-header">
+                        <span class="libros-detail__comment-icon">{{$comentario->autor[0]}}</span>
+                        <span class="libros-detail__comment-author">{{$comentario->autor}}</span>
+                    </div>
+                    <div class="libros-detail__comment-body">
+                        <p class="libros-detail__comment-text">{{$comentario->descripcion}}</p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </section>
 </article>

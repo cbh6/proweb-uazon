@@ -18,34 +18,6 @@
       margin: 10px 0;
     }
 
-    &__title {
-      @mixin media--xs {
-        font-size: 30px;
-      }
-      @mixin media--sm {
-        display: flex;
-        align-items: flex-end;
-        height: 1em;
-        line-height: .3;
-        
-        &::before {
-          margin-right: .5em;
-        }
-        &::after {
-          margin-left: .5em;
-        }
-        &::before, &::after {
-          content: " ";
-          position: relative;
-          background-color: var(--color-default--lighter);
-          display: block;
-          height: 1px;
-          -webkit-flex-grow: .5;
-          flex-grow: .5;
-        }
-      }
-    }
-
     /* Cover of the book */
     &__item-cover {
       display: block;

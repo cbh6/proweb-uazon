@@ -9,7 +9,8 @@
 /* Libros-detail
    ========================================================================== */
    .libros-detail {
-    &__container {
+    /* Main data container ----------------------*/
+    &__main-data-container {
       padding-top: 5px;
       margin: 0 auto;
     }
@@ -82,6 +83,37 @@
       font-size: 0.9em;
       border: 1px solid var(--color-box-border);
       background-color: var(--color-box);
+    }
+
+    /* Comments container ----------------------*/
+    &__comments-container {
+      padding: 0 35px;
+      @mixin media--sm {
+        padding: 0 100px;
+      }
+    }
+    &__comment {
+      @mixin media--sm {
+        padding: 0 150px;
+      }
+    }
+    &__section-title {
+      margin-bottom: 60px;
+    }
+    &__comment-icon {
+      border: 1px solid var(--color-default--extra-dark);
+      font-size: 1.5em;
+      padding: 5px 15px;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+
+    &__comment-header {
+      color: var(--color-default--extra-dark);
+    }
+
+    &__comment-body {
+      font-size: 0.9em;
     }
   }
   

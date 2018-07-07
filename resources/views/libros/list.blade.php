@@ -3,7 +3,7 @@
 @section('content')
 <article>
     <div class="container libros-list">
-        <h2 class="libros-list__title">Todos nuestros libros</h2>
+        <h2 class="title libros-list__title">Todos nuestros libros</h2>
         <div class="row libros-list__row">
         @foreach($libros as $libro)
             <div class="col-md-3 libros-list__item">
