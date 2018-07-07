@@ -35,6 +35,8 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/jpg">
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- <style type="text/css" rel="stylesheet">
         /* <?php echo file_get_contents('assets/styles/main.css') ?> */
     </style> -->

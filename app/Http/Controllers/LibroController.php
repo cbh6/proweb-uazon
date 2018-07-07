@@ -242,4 +242,12 @@ class LibroController extends Controller
             'seo_title' => 'Libros'
         ));
     }
+
+    public function detail($libro_id) {
+        $libro = Libro::find($libro_id);
+        return view('libros.detail', array(
+            'libro' => $libro,
+            'seo_title' => $libro->titulo
+        ));
+    }
 }

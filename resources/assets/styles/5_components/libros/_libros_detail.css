@@ -1,0 +1,88 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+/* Libros-detail
+   ========================================================================== */
+   .libros-detail {
+    &__container {
+      padding-top: 5px;
+      margin: 0 auto;
+    }
+    
+    &__row {
+      @mixin media--md {
+        padding: 0 100px;
+      }
+    }
+
+    &__title {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 25px;
+      
+      @mixin media--md {
+        font-size: 2.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+
+    &__cover-container {
+      @mixin media--md {
+        border-right: 1px solid var(--color-default--lighter);
+      }
+    }
+
+    &__info-container {
+      @mixin media--md {
+        padding-left: 4em;
+      }
+    }
+
+    &__cover {
+      margin: 0 auto;
+      display: block;
+      width: 250px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  
+    &__info {
+      display: block;
+
+      &--large {
+        font-size: 30px;
+      }
+    }
+
+    &__button {
+      display: block;
+      width: 100%;
+      margin-top: 2px;
+      font-size: 1em;
+      @mixin media--md {
+        display: inline-block;
+        width: 49%;
+        font-size: 1.3em;
+      }
+
+    }
+    &__buttons-container {
+      margin-top: 10px;
+    }
+
+    &__availability {
+      margin-top: 10px;
+      padding: 5px;
+      font-size: 0.9em;
+      border: 1px solid var(--color-box-border);
+      background-color: var(--color-box);
+    }
+  }
+  
+  

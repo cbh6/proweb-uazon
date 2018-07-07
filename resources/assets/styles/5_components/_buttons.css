@@ -7,27 +7,29 @@
  */
 
 .btn {
+  font-family: var(--font-family--text);
   background: var(--color-link);
   color: #ffffff;
   display: inline-block;
-  font-size: 15px;
+  font-size: 25px;
   text-decoration: none;
   white-space: nowrap;
   padding: 10px 25px;
-  border-radius: 40px;
-  margin-right: -10px;
-  box-shadow: 0 0 0 0 var(--color-link);
-  transition: background 150ms ease-in-out, box-shadow .4s ease-out;
+  border-radius: 4px;
+  /* margin-right: -10px; */
+  /* box-shadow: 0 0 0 0 var(--color-link); */
+  cursor: pointer;
+  /* transition: background 150ms ease-in-out, box-shadow .4s ease-out; */
 
   @mixin media--md {
-    font-size: 13px;
+    font-size: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
   }
 
   &:hover {
-    background: var(--color-default);
+    background: var(--color-default--dark);
     color: #ffffff;
-    box-shadow: 0 0 0 15px transparent;
+    /* box-shadow: 0 0 0 15px transparent; */
   }
 }

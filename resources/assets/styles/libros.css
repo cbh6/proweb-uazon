@@ -11,4 +11,5 @@
    @import "0_settings/_colors.css";
    @import "1_tools/_responsive.css";
    @import "5_components/libros/_libros_list.css";
+   @import "5_components/libros/_libros_detail.css";
   

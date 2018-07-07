@@ -28,7 +28,7 @@
             <div class="col-md-6">
                 <nav>
                     <ul class="header-links">
-                        <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="books.html">Libros</a></li>
+                        <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="{{ route('libros.list') }}">Libros</a></li>
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="authors.html">Autores</a></li>
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="top-reading.html">Lo más leído</a></li>
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="reviews.html">Críticas de libros</a></li>
