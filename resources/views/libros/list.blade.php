@@ -9,9 +9,11 @@
             <div class="col-md-3 libros-list__item">
 
                 <!-- Imagen de la portada -->
-                <img class="libros-list__item-cover"
-                    src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
-                    alt="Portada del libro" />
+                <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">
+                    <img class="libros-list__item-cover"
+                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
+                        alt="Portada del libro" />
+                </a>
                 
                 <a class="libros-list__item-info-container" href="{{ route('libros.detail', ['id' => $libro->id]) }}">
                     <span class="libros-list__item-data--large">{{$libro->titulo}}</span>

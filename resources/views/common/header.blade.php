@@ -6,8 +6,12 @@
 
                 <!-- Header tools -->
                 <ul class="header-links">
-                    <li class="header-links__item"><a class="header-links__link" href="{{ route('login') }}">Login</a></li>
-                    <li class="header-links__item"><a class="header-links__link" href="{{ route('register') }}">Registrarse</a></li>
+                    @guest
+                        <li class="header-links__item"><a class="header-links__link" href="{{ route('login') }}">Login</a></li>
+                        <li class="header-links__item"><a class="header-links__link" href="{{ route('register') }}">Registrarse</a></li>
+                    @else
+                        <li class="header-links__item"><a class="header-links__link" href="#">{{Auth::user()->name}}</a></li>
+                    @endguest
                     <li class="header-links__item"><a class="header-links__link" href="#">Carrito de la compra</a></li>
                 </ul>
 

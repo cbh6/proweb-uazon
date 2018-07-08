@@ -23,6 +23,7 @@
     /* Links
        ========================================================================== */
     --color-link: rgb(99, 150, 201);
+    --color-link--lighter: #a8c3d8;
     --color-link--hover: var(--color-default--dark);
           
     /* Others
