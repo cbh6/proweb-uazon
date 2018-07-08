@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comentario;
 use App\Http\Resources\ComentarioResource;
+use Illuminate\Http\Request;
 
 class ComentarioController extends Controller
 {
@@ -66,5 +67,21 @@ class ComentarioController extends Controller
             );
             return response()->json($data, 404);
         }
+    }
+
+    public function store(Request $request)
+    {
+        // $validate = $this->validate($request, [
+        //     'body' => 'required',
+        // ]);
+
+        $user = \Auth::user();
+        $comentario = new Comentario();
+        $comentario->descripcion = $request->input('descripcion');
+        $comentario->autor = $user->name;
+        $comentario->fk_libros = $request->input('id_libro');
+        $comentario->validado = 0;
+        $comentario->save();
+        return redirect()->route('libros.detail', ['id' => $request->input('id_libro')])->with('success', ['Comentario añadido correctamente']);
     }
 }

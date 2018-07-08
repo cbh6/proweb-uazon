@@ -55,10 +55,6 @@
   
     &__info {
       display: block;
-
-      &--large {
-        font-size: 30px;
-      }
     }
 
     &__button {
@@ -66,13 +62,13 @@
       width: 100%;
       margin-top: 2px;
       font-size: 1em;
-      @mixin media--md {
+      @mixin media--lg {
         display: inline-block;
+        font-size: 1.1em;
         width: 49%;
-        font-size: 1.3em;
       }
-
     }
+
     &__buttons-container {
       margin-top: 10px;
     }
@@ -122,8 +118,8 @@
         padding: 0 100px;
       }
     }
-    &__comment {
-      @mixin media--sm {
+    &__comment, &__new-comment {
+      @mixin media--md {
         padding: 0 150px;
       }
     }
@@ -140,10 +136,16 @@
 
     &__comment-header {
       color: var(--color-default--extra-dark);
+      width: 100%;
     }
 
     &__comment-body {
       font-size: 0.9em;
+      width: 100%;
+    }
+
+    &__form, &__form textarea {
+      width: 100%;
     }
   }
   

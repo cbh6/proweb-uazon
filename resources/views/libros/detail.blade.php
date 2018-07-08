@@ -83,6 +83,20 @@
                     </div>
                 </div>
             @endforeach
+            <br>
+            @if (\Session::has('success'))
+                <p>{{session('message')}}</p>
+            @endif
+            @auth
+                <div class="row libros-detail__new-comment">
+                    <form class="libros-detail__form" action="{{ url('/comentario') }}" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="id_libro" value="{{$libro->id}}" required>
+                        <textarea class="input" name="descripcion" id="desripcion" rows="5" required></textarea>
+                        <input class="btn libros-detail__button" type="submit" value="Comentar">
+                    </form>
+                </div>
+            @endauth
         </div>
     </section>
 </article>

@@ -25,6 +25,9 @@
 Route::get('/', 'HomeController@show')->name('home');
 Route::get('/libros/list', 'LibroController@list')->name('libros.list');
 Route::get('/libros/detail/{id}', 'LibroController@detail')->name('libros.detail');
-
+Route::post('/comentario', array(
+  'middleware' => 'auth',
+  'uses' => 'ComentarioController@store'
+));
 Auth::routes();
 
