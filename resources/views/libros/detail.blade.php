@@ -17,10 +17,11 @@
                     <span class="libros-detail__info--large">{{$libro->precio}} €</span>
                     <span class="libros-detail__info">Editorial: {{$libro->editorial}}</span>
                     <span class="libros-detail__info">ISBN: {{$libro->isbn}}</span>
+                    <span class="libros-detail__info">Nº de páginas: {{$libro->n_pags}}</span>
                     <span class="libros-detail__info">
                      Por 
                      @foreach($libro->autores as $autor)
-                        <a href="#">{{$autor->nombre}}</a>
+                        <a href="{{ route('autores.detail', ['id' => $autor->id]) }}">{{$autor->nombre}}</a>
                         @if($loop->index !== 0)
                             ,
                         @endif
@@ -58,7 +59,7 @@
                         </a>
                         <br>
                         <span>
-                        Por <a href="#">{{$recomendado->autores[0]->nombre}}</a>
+                        Por <a href="{{ route('autores.detail', ['id' => $recomendado->autores[0]->id]) }}">{{$recomendado->autores[0]->nombre}}</a>
                         </span>
                     </div>
 

@@ -21,7 +21,7 @@
                 </a>
                 
                 <span class="libros-list__item-author">
-                 Por <a href="#">{{$libro->autores[0]->nombre}}</a>
+                 Por <a href="{{ route('autores.detail', ['id' => $libro->autores[0]->id]) }}">{{$libro->autores[0]->nombre}}</a>
                 </span>
             </div>
         @endforeach
