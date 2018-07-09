@@ -167,4 +167,15 @@ class AutorController extends Controller
             'nombre' => 'required',
         ]);
     }
+
+    // WEB METHODS --------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------
+
+    public function list() {
+        $autores = Autor::orderBy('nombre', 'asc')->paginate(9);
+        return view('autores.list', array(
+            'autores' => $autores,
+            'seo_title' => 'Autores',
+        ));
+    }
 }

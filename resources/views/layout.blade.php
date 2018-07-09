@@ -43,6 +43,7 @@
     <link href="{{ asset('assets/styles/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/home.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/libros.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/styles/autores.css') }}" rel="stylesheet">
 </head>
 <body>
 

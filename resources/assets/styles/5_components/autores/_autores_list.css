@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+/* Autores-list
+   ========================================================================== */
+   .autores-list {
+    &__row {
+      padding-top: 5px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    &__row a {
+      text-decoration: none;
+    }
+
+    &__item {
+      margin: 10px 0;
+      display: inline-block;
+    }
+
+    &__photo {
+      display: block;
+      width: 200px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+  }
+  
+  

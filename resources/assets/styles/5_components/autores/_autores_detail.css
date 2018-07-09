@@ -1,0 +1,83 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+/* Autores-detail
+   ========================================================================== */
+   .autores-detail {
+    /* Main data container ----------------------*/
+    &__main-data-container {
+      padding-top: 5px;
+      margin: 0 auto;
+    }
+    
+    &__row {
+      @mixin media--md {
+        padding: 0 100px;
+      }
+    }
+
+    &__title {
+      font-size: 1.5em;
+      text-align: center;
+      margin-bottom: 25px;
+      
+      @mixin media--md {
+        font-size: 2.5em;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+    }
+
+    &__cover-container {
+      @mixin media--md {
+        border-right: 1px solid var(--color-default--lighter);
+      }
+    }
+
+    &__info-container {
+      @mixin media--md {
+        padding-left: 4em;
+      }
+    }
+  
+    &__info {
+      display: block;
+    }
+
+    /* Recommendations container ---------------*/
+    &__recommendations-container {
+      padding: 0 35px;
+      @mixin media--sm {
+        padding: 0 100px;
+      }
+    }
+
+    &__recommendation {
+      /* margin: 10px 0; */
+      font-size: .9em;
+    }
+
+    &__recommendation a {
+      text-decoration: none;
+    }
+
+    &__recommendation-cover {
+      display: block;
+      margin: 0 auto;
+      width: 100px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    &__recommendation-info {
+      margin-top: 10px;
+      padding-left: 40px;
+    }
+
+  }
+  
+  

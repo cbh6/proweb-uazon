@@ -11,17 +11,6 @@
 |
  */
 
-// Route::get('/', function () {
-
-//     $libros = Libro::all();
-//     $fotos = Foto::all();
-//     foreach ($fotos as $foto) {
-//         echo $foto->libro->titulo . '<br/>';
-//     }
-
-//     return view('welcome');
-// });
-
 Route::get('/', 'HomeController@show')->name('home');
 Route::get('/libros/list', 'LibroController@list')->name('libros.list');
 Route::get('/libros/detail/{id}', 'LibroController@detail')->name('libros.detail');
@@ -29,5 +18,7 @@ Route::post('/comentario', array(
   'middleware' => 'auth',
   'uses' => 'ComentarioController@store'
 ));
+Route::get('/autores/list', 'AutorController@list')->name('autores.list');
+Route::get('/autores/detail/{id}', 'AutorController@detail')->name('autores.detail');
 Auth::routes();
 

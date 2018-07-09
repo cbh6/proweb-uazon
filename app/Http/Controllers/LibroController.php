@@ -234,7 +234,10 @@ class LibroController extends Controller
         ]);
     }
 
-    function list() {
+    // WEB METHODS --------------------------------------------------------------------------------
+    // --------------------------------------------------------------------------------------------
+
+    public function list() {
         $libros = Libro::orderBy('titulo', 'asc')->paginate(9);
         return view('libros.list', array(
             'libros' => $libros,
