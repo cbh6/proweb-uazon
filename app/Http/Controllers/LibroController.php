@@ -237,7 +237,7 @@ class LibroController extends Controller
     // WEB METHODS --------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------------
 
-    public function list() {
+    function list() {
         $libros = Libro::orderBy('titulo', 'asc')->paginate(9);
         return view('libros.list', array(
             'libros' => $libros,
@@ -248,7 +248,7 @@ class LibroController extends Controller
     public function detail($libro_id)
     {
         $libro = Libro::find($libro_id);
-        $libros = Libro::where('categoria', $libro->categoria)->where('id', '!=' , $libro->id)->offset(0)->limit(4)->get();
+        $libros = Libro::where('categoria', $libro->categoria)->where('id', '!=', $libro->id)->offset(0)->limit(4)->get();
         return view('libros.detail', array(
             'libro' => $libro,
             'recomendados' => $libros,

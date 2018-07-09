@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Autor;
+use App\Libro;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\LibroResource;
 use Illuminate\Http\Request;
@@ -171,11 +172,26 @@ class AutorController extends Controller
     // WEB METHODS --------------------------------------------------------------------------------
     // --------------------------------------------------------------------------------------------
 
-    public function list() {
+    function list() {
         $autores = Autor::orderBy('nombre', 'asc')->paginate(9);
         return view('autores.list', array(
             'autores' => $autores,
             'seo_title' => 'Autores',
+        ));
+    }
+
+    public function detail($autor_id)
+    {
+        $autor = Autor::find($autor_id);
+        // $libros = Libro::where('autor', $autor->id)->offset(0)->limit(8)->get();
+
+        $libros = Libro::whereHas('autores', function ($query) use ($autor) {
+            $query->where('id', $autor->id);
+        })->get();
+        return view('autores.detail', array(
+            'autor' => $autor,
+            'libros' => $libros,
+            'seo_title' => $autor->nombre,
         ));
     }
 }

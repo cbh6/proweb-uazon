@@ -8,7 +8,7 @@
     <!-- SEO -->
     <title>{{ $seo_title }} | Uazon</title>
     <!-- <meta name="description" content="Lo primero que he de decir de esta novela es que se trata sin duda de la peor del autor, al menos para mi gusto."> -->
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 

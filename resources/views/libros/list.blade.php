@@ -23,9 +23,6 @@
                 <span class="libros-list__item-author">
                  Por <a href="#">{{$libro->autores[0]->nombre}}</a>
                 </span>
-
-                <!-- <button class="btn libros-list__item-button">Ir al detalle</button> -->
-
             </div>
         @endforeach
         </div>

@@ -8,11 +8,12 @@
         @foreach($autores as $autor)
             <div class="col-md-4">
                 <div class="autores-list__item">
-                    <!-- Imagen de la portada -->
                     <a href="{{ route('autores.detail', ['id' => $autor->id]) }}">
-                        <img class="autores-list__photo"
-                            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
-                            alt="Foto del autor" />
+                        <figure>
+                            <img class="autores-list__photo"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
+                                    alt="Foto del autor" />
+                        </figure>    
                     </a>
                     
                     <a href="{{ route('autores.detail', ['id' => $autor->id]) }}">
