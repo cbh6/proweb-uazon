@@ -28,7 +28,7 @@ class LibrosTableSeeder extends Seeder
                 'titulo' => 'Anna Karenina',
                 'editorial' => 'Juventud',
                 'atributos_extra' => '{"color": "rojo", "premios": ["planeta2012", "Nacional2011"], "material": "papel", "dimensiones_cm": {"alto": 10, "ancho": 5, "fondo": 1}}',
-                'categoria' => 'novela',
+                'categoria' => 'novelas',
             ),
             1 => 
             array (
@@ -41,7 +41,7 @@ class LibrosTableSeeder extends Seeder
                 'titulo' => 'Alice\'s Adventures in Wonderland',
                 'editorial' => 'Dover Publications',
                 'atributos_extra' => 'null',
-                'categoria' => 'novela',
+                'categoria' => 'novelas',
             ),
             2 => 
             array (
@@ -54,7 +54,7 @@ class LibrosTableSeeder extends Seeder
                 'titulo' => 'Oliver Twist',
                 'editorial' => 'Anaya',
                 'atributos_extra' => 'null',
-                'categoria' => 'novela',
+                'categoria' => 'novelas',
             ),
             3 => 
             array (
@@ -67,7 +67,7 @@ class LibrosTableSeeder extends Seeder
                 'titulo' => 'Frankenstein',
                 'editorial' => 'Anaya',
                 'atributos_extra' => 'null',
-                'categoria' => 'novela',
+                'categoria' => 'novelas',
             ),
         ));
         

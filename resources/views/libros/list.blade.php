@@ -3,7 +3,11 @@
 @section('content')
 <article>
     <div class="container libros-list">
-        <h2 class="title libros-list__title">Todos nuestros libros</h2>
+        @if(isset($categoria) && $categoria !== '')
+            <h2 class="title libros-list__title">{{ ucwords($categoria) }}</h2>
+        @else
+            <h2 class="title libros-list__title">Todos nuestros libros</h2>
+        @endif
         <div class="row libros-list__row">
         @foreach($libros as $libro)
             <div class="col-md-3 libros-list__item">

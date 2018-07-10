@@ -245,6 +245,28 @@ class LibroController extends Controller
         ));
     }
 
+    public function listCategoria($categoria)
+    {
+        $label_categorias = [
+            "novelas" => "Novelas",
+            "ciencia" => "Ciencia",
+            "historia" => "Historia",
+            "cuentos" => "Cuentos",
+            "comics" => "Cómics",
+            "poesia" => "Poesía",
+            "ficcion" => "Ficción",
+            "misterio" => "Misterio",
+            "biografia" => "Biografía"
+        ];
+
+        $libros = Libro::where('categoria', $categoria)->orderBy('titulo', 'asc')->paginate(9);
+        return view('libros.list', array(
+            'libros' => $libros,
+            'categoria' => $label_categorias[$categoria],
+            'seo_title' => 'Libros',
+        ));
+    }
+
     public function detail($libro_id)
     {
         $libro = Libro::find($libro_id);

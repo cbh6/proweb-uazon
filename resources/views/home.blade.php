@@ -12,7 +12,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Novelas</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'novelas']) }}">Ver más</a>
                         </div>
                     </figure>
                 </div>
@@ -25,7 +25,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Ciencia</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'ciencia']) }}">Ver más</a>
                         </div>
                     </figure>
                 </div>
@@ -38,7 +38,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Historia</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'historia']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -53,7 +53,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Cuentos</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'cuentos']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -66,7 +66,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Cómics</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'comics']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -79,7 +79,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Poesía</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'poesia']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -94,7 +94,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Ficción</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'ficcion']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -107,7 +107,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Misterio</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'misterio']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
@@ -120,7 +120,7 @@
                         <div class="home-categories__card-caption">
                             <h2>Biografía</h2>
                             <p>Descúbrelo...</p>
-                            <a href="#">Ver más</a>
+                            <a href="{{ route('libros.list.categoria', ['categoria' => 'biografia']) }}">Ver más</a>
                         </div>			
                     </figure>
                 </div>
