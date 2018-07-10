@@ -5,7 +5,7 @@
             <div class="col-md-6">
 
                 <!-- Copyright -->
-                <p class="copyright">ProwebUazon 2017 &copy; Todos los derechos reservados</p>
+                <p class="copyright">ProwebUazon 2018 &copy; Todos los derechos reservados</p>
 
             </div>
             <div class="col-md-6">

@@ -51,7 +51,6 @@
             crossDomain: true,
             dataType: 'jsonp',
             beforeSend: function(xhr) {
-                // xhr.setRequestHeader("X-CSRF-TOKEN'", $('meta[name="csrf-token"]').attr('content'));
                 xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
             },
             success: function(data) {

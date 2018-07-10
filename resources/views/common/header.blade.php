@@ -10,9 +10,10 @@
                         <li class="header-links__item"><a class="header-links__link" href="{{ route('login') }}">Login</a></li>
                         <li class="header-links__item"><a class="header-links__link" href="{{ route('register') }}">Registrarse</a></li>
                     @else
-                        <li class="header-links__item"><a class="header-links__link" href="#">{{Auth::user()->name}}</a></li>
+                        <li class="header-links__item"><a class="header-links__link" href="#">Hola <strong>{{Auth::user()->name}}</strong></a></li>
+                        <li class="header-links__item"><a class="header-links__link" href="{{ route('logout') }}">Logout</a></li>
                     @endguest
-                    <li class="header-links__item"><a class="header-links__link" href="#">Carrito de la compra</a></li>
+                    <li class="header-links__item"><a class="header-links__link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp; Cesta</a></li>
                 </ul>
 
             </div>
@@ -34,8 +35,6 @@
                     <ul class="header-links">
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="{{ route('libros.list') }}">Libros</a></li>
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="{{ route('autores.list') }}">Autores</a></li>
-                        <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="top-reading.html">Lo más leído</a></li>
-                        <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="reviews.html">Críticas de libros</a></li>
                         <li class="header-links__item header-links__item--higher"><a class="header-links__link" href="contact.html">Contacto</a></li>
                     </ul>
                 </nav>
