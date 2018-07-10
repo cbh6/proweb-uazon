@@ -66,6 +66,8 @@
         display: inline-block;
         font-size: 1.1em;
         width: 49%;
+      }
+      &--right {
         float: right;
       }
     }

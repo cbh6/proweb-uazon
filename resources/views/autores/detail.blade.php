@@ -14,7 +14,8 @@
                         alt="Foto del autor" />
                 </div>
                 <div class="col-md-12 autores-detail__description-container">
-                    <p>Hola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que talHola que tal</p>
+                    <p class="autores-detail__description">Cargando descripción ...</p>
+                    <p class="autores-detail__wiki-link">Fuente: <a href="https://es.wikipedia.org/wiki/{{$autor->nombre}}">wikipedia</a></p>
                 </div>
             </div>
         </div>
@@ -43,14 +44,23 @@
         </div>
     </section>
     <script>
-        var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=Stephen%20King';
+        const authorName = $('.autores-detail__title').html();
+        const url = `https://es.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro=&explaintext=&titles=${authorName}`;
         $.ajax({
             url: url,
+            crossDomain: true,
+            dataType: 'jsonp',
             beforeSend: function(xhr) {
-                xhr.setRequestHeader("X-CSRF-TOKEN'", $('meta[name="csrf-token"]').attr('content'));
+                // xhr.setRequestHeader("X-CSRF-TOKEN'", $('meta[name="csrf-token"]').attr('content'));
+                xhr.setRequestHeader("Access-Control-Allow-Origin", '*');
             },
             success: function(data) {
-                alert(data);
+                const wikipediaJsonResponseKey = Object.keys(data.query.pages);
+                const extract = data.query.pages[wikipediaJsonResponseKey].extract;
+                if (extract) {
+                    $('.autores-detail__wiki-link').show();
+                }
+                $('.autores-detail__description').html(extract);
             }
         });
     </script>

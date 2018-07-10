@@ -94,7 +94,7 @@
                         {!! csrf_field() !!}
                         <input type="hidden" name="id_libro" value="{{$libro->id}}" required>
                         <textarea class="input" name="descripcion" id="desripcion" rows="5" required></textarea>
-                        <input class="btn libros-detail__button" type="submit" value="Comentar">
+                        <input class="btn libros-detail__button--right" type="submit" value="Comentar">
                     </form>
                 </div>
             @endauth

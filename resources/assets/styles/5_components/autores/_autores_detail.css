@@ -50,6 +50,10 @@
       display: block;
     }
 
+    &__wiki-link {
+      display: none;
+    }
+
     /* Libros container ---------------*/
     &__libros-container {
       padding: 0 35px;
