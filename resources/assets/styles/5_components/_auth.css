@@ -1,0 +1,48 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+ .auth {
+  &__form-container {
+    padding-bottom: 15px;
+    margin: 0 auto;
+  }
+  &__form {
+    border-color: var(--color-default--lighter);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  }
+  &__field input {
+    width: 100%;
+    border: 1px solid rgba(34,36,38,.15);
+    border-radius: 5px;
+
+    &:focus {
+      border-color: var(--color-default);
+    }
+  }
+  &__title {
+    font-size: 1.7em;
+  }
+  &__button {
+    display: block;
+    width: 100%;
+  }
+  &__password-reset-link {
+    font-size: .8em;
+  }
+  &__links {
+    text-align: center;
+  }
+  &__errors {
+    font-size: .9em;
+    color: var(--color-error);
+  }
+}

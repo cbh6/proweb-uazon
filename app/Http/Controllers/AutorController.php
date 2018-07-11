@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Autor;
-use App\Libro;
 use App\Http\Resources\AutorResource;
 use App\Http\Resources\LibroResource;
+use App\Libro;
 use Illuminate\Http\Request;
 use Validator;
 

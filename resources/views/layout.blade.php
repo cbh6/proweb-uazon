@@ -6,8 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO -->
-    <title>{{ $seo_title }} | Uazon</title>
-    <!-- <meta name="description" content="Lo primero que he de decir de esta novela es que se trata sin duda de la peor del autor, al menos para mi gusto."> -->
+    @if(isset($seo_title) && $seo_title !== '')
+        <title>{{ $seo_title }} | Uazon</title>
+    @else
+        <title>Uazon</title>
+    @endif
+
+    <meta name="description" content="Tienda de libros online UAZON">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,9 +45,7 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
-    <!-- <style type="text/css" rel="stylesheet">
-        /* <?php echo file_get_contents('assets/styles/main.css') ?> */
-    </style> -->
+    <!-- styles -->
     <link href="{{ asset('assets/styles/main.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/home.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/libros.css') }}" rel="stylesheet">

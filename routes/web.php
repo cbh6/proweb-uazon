@@ -16,11 +16,10 @@ Route::get('/libros/list', 'LibroController@list')->name('libros.list');
 Route::get('/libros/list/{categoria}', 'LibroController@listCategoria')->name('libros.list.categoria');
 Route::get('/libros/detail/{id}', 'LibroController@detail')->name('libros.detail');
 Route::post('/comentario', array(
-  'middleware' => 'auth',
-  'uses' => 'ComentarioController@store'
+    'middleware' => 'auth',
+    'uses' => 'ComentarioController@store',
 ));
 Route::get('/autores/list', 'AutorController@list')->name('autores.list');
 Route::get('/autores/detail/{id}', 'AutorController@detail')->name('autores.detail');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Auth::routes();
-
