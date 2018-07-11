@@ -5,13 +5,15 @@
  * permission of Proweb
  *
  */
+ @import url('https://fonts.googleapis.com/css?family=Raleway');
+ @import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
 :root {
 
     /* Font family
        ========================================================================== */
-    --font-family--text: 'Roboto', sans-serif;
-    --font-family--title: 'Days One', sans-serif;
+    --font-family--text: 'Raleway', sans-serif;
+    --font-family--title: 'Fjalla One', sans-serif;
 
     /* Font weight
        ========================================================================== */
