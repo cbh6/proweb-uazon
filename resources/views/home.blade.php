@@ -3,6 +3,7 @@
 @section('content')
 <article>
     <div class="container home-categories">
+        <h2 class="title">Categorías</h2>
         <div class="row home-categories__row">
             <!-- Novelas -->
             <div class="col-md-4 home-categories__item">

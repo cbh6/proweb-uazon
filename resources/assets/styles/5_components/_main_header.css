@@ -54,12 +54,16 @@
   }
 
   &__link {
-    color: #9D9FA2;
+    color: var(--color-default--lighter);
     text-decoration: none;
+    letter-spacing: 3px;
+    &:hover {
+      color: var(--color-link);
+    }
   }
 
   &__highlight {
-    color: #004C80;
+    color: var(--color-link);
   }
 }
 

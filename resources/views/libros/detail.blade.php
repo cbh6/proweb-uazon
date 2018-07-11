@@ -90,6 +90,7 @@
             @endif
             @auth
                 <div class="row libros-detail__new-comment">
+                    <h4>Añade un comentario</h4>
                     <form class="libros-detail__form" action="{{ url('/comentario') }}" method="POST">
                         {!! csrf_field() !!}
                         <input type="hidden" name="id_libro" value="{{$libro->id}}" required>
