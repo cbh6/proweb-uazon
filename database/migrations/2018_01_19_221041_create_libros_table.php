@@ -24,6 +24,7 @@ class CreateLibrosTable extends Migration
             $table->string('editorial', 90);
             $table->json('atributos_extra');
             $table->string('categoria', 30);
+            $table->string('portada', 90);
             $table->timestamps();
         });
     }

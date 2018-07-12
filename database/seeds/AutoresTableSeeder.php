@@ -52,6 +52,24 @@ class AutoresTableSeeder extends Seeder
                 'id' => 7,
                 'nombre' => 'Lewis Carrol',
             ),
+            7 => 
+            array (
+                'id' => 8,
+                'nombre' => 'Stephen Hawking',
+                'foto' => 'https://www.premiosfronterasdelconocimiento.es/wp-content/uploads/sites/2/2017/05/FBBVA-15-ciencia-Stephen-Hawking.jpg',
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'nombre' => 'Javier Santaolalla',
+                'foto' => 'https://www.plataformaeditorial.com/uploads/RESEG5511javiersantolalla.jpg',
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'nombre' => 'Deborah García Bellos',
+                'foto' => 'https://www.lavanguardia.com/r/GODO/LV/p3/WebSite/2016/04/19/Recortada/img_njar_20160419-001158_imagenes_lv_otras_fuentes_foto_deborah_promo_2-kZRC--572x700@LaVanguardia-Web.JPG',
+            ),
         ));
         
         

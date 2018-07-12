@@ -69,6 +69,62 @@ class LibrosTableSeeder extends Seeder
                 'atributos_extra' => 'null',
                 'categoria' => 'novelas',
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'isbn' => 9788483468913,
+                'voto' => 5.0,
+                'num_voto' => 63,
+                'n_pags' => 152,
+                'precio' => '9.95',
+                'titulo' => 'La teoría del todo',
+                'editorial' => 'DEBOLSILLO',
+                'atributos_extra' => 'null',
+                'categoria' => 'ciencia',
+                'portada' => 'https://imagessl3.casadellibro.com/a/l/t0/13/9788483468913.jpg',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'isbn' => 9788498925142,
+                'voto' => 5.0,
+                'num_voto' => 63,
+                'n_pags' => 248,
+                'precio' => '17.00',
+                'titulo' => 'Historia del tiempo',
+                'editorial' => 'CRITICA',
+                'atributos_extra' => 'null',
+                'categoria' => 'ciencia',
+                'portada' => 'https://imagessl2.casadellibro.com/a/l/t0/42/9788498925142.jpg',
+            ),
+            6 => 
+            array (
+                'id' => 7,
+                'isbn' => 9788490607725,
+                'voto' => 5.0,
+                'num_voto' => 63,
+                'n_pags' => 372,
+                'precio' => '17.00',
+                'titulo' => 'El boson de higgs',
+                'editorial' => 'LA ESFERA DE LOS LIBROS',
+                'atributos_extra' => 'null',
+                'categoria' => 'ciencia',
+                'portada' => 'https://imagessl5.casadellibro.com/a/l/t0/25/9788490607725.jpg',
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'isbn' => 9788449331886,
+                'voto' => 5.0,
+                'num_voto' => 63,
+                'n_pags' => 288,
+                'precio' => '16.10',
+                'titulo' => 'Todo es cuestión de química',
+                'editorial' => 'PAIDOS IBERICA',
+                'atributos_extra' => 'null',
+                'categoria' => 'ciencia',
+                'portada' => 'https://imagessl6.casadellibro.com/a/l/t0/86/9788449331886.jpg',
+            ),
         ));
         
         

@@ -16,6 +16,7 @@ class CreateAutoresTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nombre', 90)->index('nombre');
+			$table->string('foto', 90);
 			$table->timestamps();
 		});
 	}

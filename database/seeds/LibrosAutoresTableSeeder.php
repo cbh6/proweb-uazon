@@ -41,6 +41,30 @@ class LibrosAutoresTableSeeder extends Seeder
                 'fk_autores' => 6,
                 'fecha' => '2003-04-29',
             ),
+            4 => 
+            array (
+                'fk_libros' => 5,
+                'fk_autores' => 8,
+                'fecha' => '2011-05-11',
+            ),
+            5 => 
+            array (
+                'fk_libros' => 6,
+                'fk_autores' => 8,
+                'fecha' => '2011-05-11',
+            ),
+            6 => 
+            array (
+                'fk_libros' => 7,
+                'fk_autores' => 9,
+                'fecha' => '2016-05-22',
+            ),
+            7 => 
+            array (
+                'fk_libros' => 8,
+                'fk_autores' => 10,
+                'fecha' => '2016-05-22',
+            ),
         ));
         
         
