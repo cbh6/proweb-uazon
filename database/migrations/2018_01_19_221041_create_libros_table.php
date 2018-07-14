@@ -15,7 +15,7 @@ class CreateLibrosTable extends Migration
     {
         Schema::create('libros', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('isbn')->unsigned();
+            $table->bigInteger('isbn')->unsigned();
             $table->float('voto', 10, 0);
             $table->integer('num_voto')->unsigned();
             $table->smallInteger('n_pags')->unsigned();
@@ -24,7 +24,7 @@ class CreateLibrosTable extends Migration
             $table->string('editorial', 90);
             $table->json('atributos_extra');
             $table->string('categoria', 30);
-            $table->string('portada', 90);
+            $table->string('portada', 200);
             $table->timestamps();
         });
     }
