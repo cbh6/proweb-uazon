@@ -10,7 +10,7 @@
                 <div class="col-md-6 libros-detail__cover-container">
                     <!-- Imagen de la portada -->
                     <img class="libros-detail__cover"
-                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
+                        src="{{$libro->portada}}"
                         alt="Portada del libro" />
                 </div>
                 <div class="col-md-6 libros-detail__info-container">
@@ -52,12 +52,14 @@
             <div class="row libros-detail__row">
             @foreach($recomendados as $recomendado)
                 <div class="col-md-3 libros-detail__recommendation">
-                    <img class="libros-detail__recommendation-cover"
-                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
-                        alt="Portada del libro" />
+                    <a href="{{ route('libros.detail', ['id' => $recomendado->id]) }}">
+                        <img class="libros-detail__recommendation-cover"
+                            src="{{$recomendado->portada}}"
+                            alt="Portada del libro" />
+                    </a>
 
                     <div class="libros-detail__recommendation-info">
-                        <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">
+                        <a href="{{ route('libros.detail', ['id' => $recomendado->id]) }}">
                             <span>{{$recomendado->titulo}}</span>
                         </a>
                         <br>

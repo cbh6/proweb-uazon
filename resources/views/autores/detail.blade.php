@@ -10,7 +10,7 @@
                 <div class="col-md-12 autores-detail__photo-container">
                     <!-- Foto del autor -->
                     <img class="autores-detail__photo"
-                        src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
+                        src="{{$autor->foto}}"
                         alt="Foto del autor" />
                 </div>
                 <div class="col-md-12 autores-detail__description-container">
@@ -28,9 +28,11 @@
             <div class="row autores-detail__row">
             @foreach($libros as $libro)
                 <div class="col-md-3 autores-detail__libro">
-                    <img class="autores-detail__libro-cover"
-                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
-                        alt="Portada del libro" />
+                    <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">
+                        <img class="autores-detail__libro-cover"
+                            src="{{$libro->portada}}"
+                            alt="Portada del libro" />
+                    </a>
 
                     <div class="autores-detail__libro-info">
                         <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">

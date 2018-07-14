@@ -15,7 +15,7 @@
                 <!-- Imagen de la portada -->
                 <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">
                     <img class="libros-list__item-cover"
-                        src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
+                        src="{{$libro->portada}}"
                         alt="Portada del libro" />
                 </a>
                 

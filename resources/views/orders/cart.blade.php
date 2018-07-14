@@ -17,7 +17,7 @@
               <tr id="{{$linea_pedido['libro']->id}}">
                 <td>
                   <img class="cart__item-cover"
-                    src="https://imagessl3.casadellibro.com/a/l/t1/13/9788483468913.jpg"
+                    src="{{$linea_pedido['libro']->portada}}"
                     alt="Portada del libro" />
                 </td>
                 <td class="cart__item-title">

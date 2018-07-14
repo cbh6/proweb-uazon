@@ -11,7 +11,7 @@
                     <a href="{{ route('autores.detail', ['id' => $autor->id]) }}">
                         <figure>
                             <img class="autores-list__photo"
-                                    src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Stephen_King%2C_Comicon.jpg"
+                                    src="{{$autor->foto}}"
                                     alt="Foto del autor" />
                         </figure>    
                     </a>
