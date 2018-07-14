@@ -29,7 +29,7 @@
                     </span>
                     
                     <div class="libros-detail__message-container">
-                        <span class="libros-detail__message">Libro añadido a la cesta. <a href="#">Ir al pedido</a></span>
+                        <span class="libros-detail__message">Artículo añadido a la cesta. <a href="{{ route('cart.list') }}">Ir a la cesta</a></span>
                     </div>
                     <div class="libros-detail__buttons-container">
                         <button class="btn libros-detail__button" onclick="addToCart({{$libro}})">Añadir al carrito</button>

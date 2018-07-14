@@ -6,6 +6,9 @@
  *
  */
 
+ @import "0_settings/_colors.css";
+ @import "1_tools/_responsive.css";
+
  .auth {
   &__form-container {
     padding-bottom: 15px;

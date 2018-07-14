@@ -86,6 +86,7 @@
       border: 1px solid var(--color-box-border);
       background-color: var(--color-box);
       border-radius: 5px;
+      text-align:center;
     }
 
     &__message-container {

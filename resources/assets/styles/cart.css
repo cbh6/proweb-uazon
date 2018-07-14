@@ -1,0 +1,51 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+ @import "0_settings/_colors.css";
+ @import "1_tools/_responsive.css";
+
+ .cart {
+  @mixin media--lg {
+    padding: 0 200px;
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+  }
+
+  &__item-cover {
+    width: 50px;
+  }
+  &__item-title {
+    font-size: 1.2em;
+    @mixin media--xs {
+      font-size: .9em;
+    }
+  }
+  &__item-price {
+    font-size: 1.5em;
+    color: var(--color-default--dark);
+    @mixin media--xs {
+      font-size: .9em;
+    }
+  }
+
+  &__table {
+    border:none;
+    border-collapse: collapse;
+  }
+
+  &__table td {
+      border-left: none;
+      border-right: none;
+  }
+
+  &__table a {
+    text-decoration: none;
+  }
+}

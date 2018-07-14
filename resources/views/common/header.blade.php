@@ -13,7 +13,7 @@
                         <li class="header-links__item"><a class="header-links__link" href="#">Hola <strong>{{Auth::user()->name}}</strong></a></li>
                         <li class="header-links__item"><a class="header-links__link" href="{{ route('logout') }}">Logout</a></li>
                     @endguest
-                    <li class="header-links__item"><a class="header-links__link" href="#"><i class="fas fa-shopping-cart"></i>&nbsp; Cesta <span class="header-links__cart-items">({{Cart::count()}})</span></a></li>
+                    <li class="header-links__item"><a class="header-links__link" href="{{ route('cart.list') }}"><i class="fas fa-shopping-cart"></i>&nbsp; Cesta <span class="header-links__cart-items">({{Cart::count()}})</span></a></li>
                 </ul>
 
             </div>

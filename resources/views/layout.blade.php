@@ -51,6 +51,8 @@
     <link href="{{ asset('assets/styles/home.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/libros.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/styles/autores.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/styles/auth.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/styles/cart.css') }}" rel="stylesheet">
 </head>
 <body>
 
