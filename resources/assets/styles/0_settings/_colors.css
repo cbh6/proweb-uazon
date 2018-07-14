@@ -20,6 +20,7 @@
     --color-text: rgb(63, 97, 106);
     --color-title: var(--color-default--dark);
     --color-error: rgb(255, 102, 102);
+    --color-success: #b8f3c3;
 
     /* Links
        ========================================================================== */

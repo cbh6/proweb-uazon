@@ -81,10 +81,20 @@
 
     &__availability {
       margin-top: 10px;
-      padding: 5px;
+      padding: 5px; 
       font-size: 0.9em;
       border: 1px solid var(--color-box-border);
       background-color: var(--color-box);
+      border-radius: 5px;
+    }
+
+    &__message-container {
+      display: none;
+      margin-top: 10px;
+      border: 1px solid var(--color-box-border);
+      padding: 5px;
+      background-color: var(--color-success);
+      border-radius: 5px;
     }
 
     /* Recommendations container ---------------*/

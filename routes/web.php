@@ -22,4 +22,5 @@ Route::post('/comentario', array(
 Route::get('/autores/list', 'AutorController@list')->name('autores.list');
 Route::get('/autores/detail/{id}', 'AutorController@detail')->name('autores.detail');
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::post('/addToCart', 'LibroController@addToCart')->name('libros.addToCart');   
 Auth::routes();

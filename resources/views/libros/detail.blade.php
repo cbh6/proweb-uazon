@@ -28,13 +28,16 @@
                     @endforeach
                     </span>
                     
+                    <div class="libros-detail__message-container">
+                        <span class="libros-detail__message">Libro añadido a la cesta. <a href="#">Ir al pedido</a></span>
+                    </div>
                     <div class="libros-detail__buttons-container">
-                        <button class="btn libros-detail__button">Añadir al carrito</button>
+                        <button class="btn libros-detail__button" onclick="addToCart({{$libro}})">Añadir al carrito</button>
                         <button class="btn libros-detail__button">Comprar</button>
                     </div>
 
                     <div class="libros-detail__availability">
-                        <p>Disponible para recoger en tienda, <a href="#">consulta disponibilidad en tiendas cercanas</a></p>
+                        <p><i class="fas fa-map-marker-alt"></i> Disponible para recoger en tienda, <br><a href="#">consulta disponibilidad en tiendas cercanas</a></p>
                     </div>
     
                 </div>
@@ -98,8 +101,30 @@
                         <input class="btn libros-detail__button--right" type="submit" value="Comentar">
                     </form>
                 </div>
+            @else
+                <p>Para poder comentar necesitas estar logeado. <a href="{{ route('login') }}">Ir al login</a></p>
             @endauth
         </div>
     </section>
+
+    <script>
+        function addToCart(libro) {
+            $.ajax({
+                url: '/addToCart',
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {libro_id: libro.id, qty: '1'},
+                dataType: 'JSON',
+                success: function (data) { 
+                   $('.header-links__cart-items').html(`(${data.items})`);
+                   $('.libros-detail__message-container').fadeIn('slow', function () {
+                        $(this).delay(5000).fadeOut('slow');
+                    });
+                }
+            }); 
+        }
+    </script>
 </article>
 @endsection
