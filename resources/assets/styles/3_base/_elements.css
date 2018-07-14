@@ -114,5 +114,30 @@ tr th {
 }
 
 tr td {
-  border: 1px solid var(--color-default--lighter);
+  border-top: 1px solid var(--color-default--lighter);
+  border-bottom: 1px solid var(--color-default--lighter);
+}
+
+td {
+    border-left: none;
+    border-right: none;
+}
+
+table a {
+  text-decoration: none;
+}
+
+
+
+/* Inputs
+   ========================================================================== */
+
+input {
+  border: 1px solid rgba(34,36,38,.15);
+  border-radius: 5px;
+  padding: 7px;
+}
+
+input:focus {
+  border-color: var(--color-default);
 }

@@ -12,6 +12,9 @@
     &__row {
       padding-top: 5px;
       margin: 0 auto;
+      @mixin media--lg {
+        padding-left: 10%;
+      }
     }
 
     &__item {

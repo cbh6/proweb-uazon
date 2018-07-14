@@ -35,11 +35,19 @@
               </tr>
               @endforeach
             </table>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="cart__total">Total: <span class="cart__total-qty">{{$total}}</span> €</p>
             </div>
-          @else
-            <p class="cart__void-cart-message">Todavía no has añadido ningún artículo a la cesta</p>
-          @endif
-        <p class="cart__total">Total: <span class="cart__total-qty">{{$total}}</span> €</p>
+            <div class="col-md-6">
+              <a href="{{ route('order')}}" class="btn cart__order-btn">Tramitar pedido</a>
+            </div>
+          </div>
+        @else
+          <p class="cart__void-cart-message">Todavía no has añadido ningún artículo a la cesta</p>
+        @endif
+        
     </div>
     <script>
         function removeFromCart(id) {

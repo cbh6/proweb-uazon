@@ -1,0 +1,51 @@
+/*
+ * Copyright (c) 2017 by Proweb https://proweb.com - All rights reserved
+ *
+ * This file can not be copied and/or distributed without the express
+ * permission of Proweb
+ *
+ */
+
+ @import "0_settings/_colors.css";
+ @import "1_tools/_responsive.css";
+
+ .order {
+  padding: 0 50px;
+  @mixin media--lg {
+    padding: 0 250px;
+  }
+
+  &__row {
+    @mixin media--lg {
+      padding: 0 100px;
+    }
+  }
+
+  &__row p {
+    font-size: 1em;
+  }
+
+  &__resume-table tr:first-child td {
+    border-top: none;
+  }
+
+  &__resume-table tr:last-child td{
+    border-bottom: none;
+  }
+
+  &__btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  &__total {
+    color: var(--color-default--dark);
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  /* input field */
+  &__address {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}

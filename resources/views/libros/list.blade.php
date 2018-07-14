@@ -10,7 +10,7 @@
         @endif
         <div class="row libros-list__row">
         @foreach($libros as $libro)
-            <div class="col-md-3 libros-list__item">
+            <div class="col-md-4 libros-list__item">
 
                 <!-- Imagen de la portada -->
                 <a href="{{ route('libros.detail', ['id' => $libro->id]) }}">

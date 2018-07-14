@@ -27,12 +27,6 @@
   }
   &__field input {
     width: 100%;
-    border: 1px solid rgba(34,36,38,.15);
-    border-radius: 5px;
-
-    &:focus {
-      border-color: var(--color-default);
-    }
   }
   &__title {
     font-size: 1.7em;
@@ -50,8 +44,5 @@
   &__errors {
     font-size: .9em;
     color: var(--color-error);
-  }
-  &__input {
-    padding: 7px;
   }
 }

@@ -29,7 +29,9 @@ Route::get('/autores/detail/{id}', 'AutorController@detail')->name('autores.deta
 // Cart
 Route::get('/cart', 'CartController@list')->name('cart.list');
 Route::post('/addToCart', 'CartController@add');   
-Route::post('/removeFromCart', 'CartController@remove');   
+Route::post('/addToCartAndOrder', 'CartController@addAndOrder');   
+Route::post('/removeFromCart', 'CartController@remove');  
+Route::get('/order', 'CartController@order')->name('order'); 
 
 // Auth
 Auth::routes();

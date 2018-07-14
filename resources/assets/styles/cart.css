@@ -35,17 +35,13 @@
     }
   }
 
-  &__table {
-    border:none;
-    border-collapse: collapse;
+  &__total {
+    margin: 0;
   }
-
-  &__table td {
-      border-left: none;
-      border-right: none;
-  }
-
-  &__table a {
-    text-decoration: none;
+  &__order-btn {
+    @mixin media--md {
+      float: right;
+    }
+    font-size: 1em;
   }
 }

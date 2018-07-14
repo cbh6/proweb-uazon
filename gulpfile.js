@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     postcssHexrgba = require('postcss-hexrgba'),
     postcssPxToRem = require('postcss-pxtorem'),
     runSequence = require('run-sequence'),
-    uglify = require('gulp-uglify');
+    uglify = require('gulp-uglify'),
+    gutil = require('gulp-util');
 
 // PxToRem Configuration
 var pxToRemConf = {
@@ -104,9 +105,9 @@ gulp.task('scripts-third', function() {
 // Scripts
 // --------------------------------------------------------------------------------------------
 gulp.task('scripts', function() {
-    return  gulp.src(sourceAssets + '/scripts/**/*')
+    return  gulp.src(sourceAssets + '/scripts/*.js')
                 .pipe(concat('scripts.js'))
                 .pipe(uglify())
+                .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
                 .pipe(gulp.dest(publicAssets + '/scripts'));
-
 });
