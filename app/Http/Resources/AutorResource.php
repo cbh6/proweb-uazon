@@ -17,6 +17,7 @@ class AutorResource extends Resource
         return [
             'id' => $this->id,
             'nombre' => $this->nombre,
+            'foto' => $this->foto,
         ];
     }
 }

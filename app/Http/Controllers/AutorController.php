@@ -44,6 +44,7 @@ class AutorController extends Controller
         // Save Autor
         $autor = new Autor();
         $autor->nombre = $params->nombre;
+        $autor->foto = $params->foto;
 
         $autor->save();
 
@@ -98,6 +99,7 @@ class AutorController extends Controller
 
         if ($autor) {
             $autor->nombre = $params->nombre;
+            $autor->foto = $params->foto;
             $autor->save();
             $data = array(
                 'autor' => $autor,
@@ -166,6 +168,7 @@ class AutorController extends Controller
     {
         return Validator::make($data, [
             'nombre' => 'required',
+            'foto' => 'required',
         ]);
     }
 

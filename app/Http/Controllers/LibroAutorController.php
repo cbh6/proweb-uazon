@@ -40,11 +40,11 @@ class LibroAutorController extends Controller
         $params = json_decode($json);
         $params_array = json_decode($json, true);
 
-        $validator = $this->validator($params_array);
+        // $validator = $this->validator($params_array);
 
-        if ($validator->fails()) {
-            return response()->json($validator->messages(), 400);
-        }
+        // if ($validator->fails()) {
+        //     return response()->json($validator->messages(), 400);
+        // }
 
         // Find libro
         $libro = Libro::find($idLibro);
@@ -67,8 +67,10 @@ class LibroAutorController extends Controller
             return $this->respondWithError($message);
         }
 
-        $fecha = Carbon::createFromFormat('Y-m-d', $params->fecha);
-        $libro->autores()->attach($idAutor, ['fecha' => $fecha]);
+        // $fecha = Carbon::createFromFormat('Y-m-d', $params->fecha);
+        // $fecha = Carbon::now()->format('Y-m-d');
+        $libro->autores()->detach();
+        $libro->autores()->attach($idAutor);
 
         $data = array(
             'libro' => $libro,

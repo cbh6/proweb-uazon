@@ -25,7 +25,8 @@ class LibroResource extends Resource
             'editorial' => $this->editorial,
             'atributos_extra' => $this->atributos_extra,
             'autores' => AutorResource::collection($this->autores),
-            'fotos' => FotoResource::collection($this->fotos),
+            'portada' => $this->portada,
+            'categoria' => $this->categoria,
             'cantidad' => $this->whenPivotLoaded('libros_pedidos', function () {
                 return $this->pivot->cantidad;
             }),

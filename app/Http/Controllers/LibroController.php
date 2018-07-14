@@ -50,6 +50,8 @@ class LibroController extends Controller
         $libro->n_pags = $params->n_pags;
         $libro->voto = 0;
         $libro->num_voto = 0;
+        $libro->categoria = $params->categoria;
+        $libro->portada = $params->portada;
 
         $atributos_extra = (!is_null($json) && isset($params->atributos_extra)) ? json_encode($params->atributos_extra) : json_encode(json_decode("{}"));
         $libro->atributos_extra = $atributos_extra;
@@ -114,6 +116,8 @@ class LibroController extends Controller
             $libro->n_pags = $params->n_pags;
             $libro->voto = 0;
             $libro->num_voto = 0;
+            $libro->categoria = $params->categoria;
+            $libro->portada = $params->portada;
             $libro->atributos_extra = json_encode($params->atributos_extra);
 
             $libro->save();
@@ -230,6 +234,7 @@ class LibroController extends Controller
             'titulo' => 'required',
             'editorial' => 'required',
             'n_pags' => 'required',
+            'portada' => 'required',
             // 'atributos_extra' => 'required',
         ]);
     }

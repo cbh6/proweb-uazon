@@ -14,11 +14,11 @@ class CreateLibrosAutoresTable extends Migration {
 	{
 		Schema::create('libros_autores', function(Blueprint $table)
 		{
-            $table->integer('fk_libros')->unsigned()->index('FK_Libros_autores_1');
+				$table->integer('fk_libros')->unsigned()->index('FK_Libros_autores_1');
 			$table->integer('fk_autores')->unsigned()->index('FK_Libros_autores_2');
-			$table->date('fecha');
+			$table->date('fecha')->nullable();
 			$table->primary(['fk_libros','fk_autores']);
-            $table->timestamps();
+			$table->timestamps();
 		});
 	}
 
