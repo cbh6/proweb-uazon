@@ -8,8 +8,6 @@ use App\Http\Resources\LibroResource;
 use App\Libro;
 use Illuminate\Http\Request;
 use Validator;
-use Gloudemans\Shoppingcart\Facades\Cart;
-
 
 class LibroController extends Controller
 {
@@ -258,7 +256,7 @@ class LibroController extends Controller
             "poesia" => "Poesía",
             "ficcion" => "Ficción",
             "misterio" => "Misterio",
-            "biografia" => "Biografía"
+            "biografia" => "Biografía",
         ];
 
         $libros = Libro::where('categoria', $categoria)->orderBy('titulo', 'asc')->paginate(9);
@@ -278,19 +276,5 @@ class LibroController extends Controller
             'recomendados' => $libros,
             'seo_title' => $libro->titulo,
         ));
-    }
-
-    public function addToCart(Request $request) {
-        $libro = Libro::find($request->libro_id);
-        $qty = $request->qty;
-        Cart::add($libro->id, $libro->titulo, intval($qty), $libro->precio);
-
-        $response = array(
-            'status' => 'success',
-            'msg' => 'Libro añadido a la cesta correctamente',
-            'total' => Cart::total(),
-            'items' => Cart::count()
-        );
-        return response()->json($response); 
     }
 }
