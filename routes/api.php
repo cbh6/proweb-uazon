@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['auth.jwt']], function () {
+Route::group(['middleware' => ['auth.jwt', 'cors']], function () {
     Route::apiResource('libros', 'LibroController');
     Route::apiResource('autores', 'AutorController');
     Route::apiResource('pedidos', 'PedidoController', ['only' => ['index', 'show', 'destroy']]);
